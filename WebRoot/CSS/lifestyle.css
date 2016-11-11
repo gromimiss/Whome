@@ -1,0 +1,76 @@
+@charset "utf-8";
+.lifeimg {
+	margin-top: 60px;
+	
+	margin-right: 100px;
+	width: 753px;
+	float: left;
+}
+.p {
+	font-size: 28px;
+	border-bottom-width: medium;
+	border-bottom-style: none;
+	border-bottom-color: #999;
+	color: #2C333D;
+	font-family: "宋体";
+}
+
+.underline {
+	background-color: #CCC;
+	height: 10px;
+	width: 20px;
+}
+
+
+.essay {
+	background: rgba(255, 255, 255, 0.7)!important;
+	filter: Alpha(opacity=95); /* 透明度*/
+	background: #fff; /*　使用IE专属滤镜实现IE背景透明*/
+	height: 540px;
+	width: 400px;
+	float: right;
+	margin-right: 150px;
+	margin-top: 20px;
+}
+.life {
+	height: 620px;
+	background-image: url(../img/back.jpg);
+	width: 1344px;
+	text-align: center;
+	background-repeat: no-repeat;
+	margin-left: 10px;	
+}
+.span {
+	font-size: 24px;
+	letter-spacing: 2px;
+	font-weight: bolder;
+	color: #44505E;
+}
+
+.essay ul {
+}
+.essay ul li{
+	list-style: none;
+	font-size: 16px;
+	line-height: 35px;
+	text-align: left;
+}
+.essay ul li a:link {
+	color: #596879;
+	font-size: 16px;
+	text-decoration: none;
+}
+.essay ul li a:visited{
+	color: #596879;
+	font-size: 16px;
+	text-decoration: none;
+}
+
+.essay ul li a:hover{
+	color: #248D0E;
+	}
+	
+.essay ul li a:active{
+	color: #248D0E;
+	}
+	

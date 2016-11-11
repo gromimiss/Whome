@@ -1,0 +1,87 @@
+@charset "utf-8";
+
+.arrow-up {
+	width: 0px;
+	height: 0px;
+	border-left: 15px solid transparent;
+	border-right: 15px solid transparent;
+	border-bottom: 15px solid yellow;
+	/*以下属性可以是IE5兼容*/
+	font-size: 0px;
+	line-height: 0px;
+	position: fixed;
+	top: 1800px;
+}
+.item {
+	height: 500px;
+	width: 1000px;
+	border: thin solid #CCC;
+}
+.container #conn #list ul {
+	list-style: none;
+	margin-left: 270px;
+	margin-top: -80px;
+	z-index: 1000;
+	position: absolute;
+	background-color: #FFF;
+	padding-top: 40px;
+	padding-right: 60px;
+	width: 800px;
+}
+.container #conn #list ul li {
+	float: left;
+	margin-left: 40px;
+	line-height: 25px;
+	font-family: "微软雅黑";
+	letter-spacing: 2px;
+	text-align: center;
+}
+.p {
+	margin-right: 20px;
+	margin-left: 20px;
+	font-size: 14px;
+	color: #333;
+	font-family: "微软雅黑";
+}
+.p2 {
+	font-size: 16px;
+	font-weight: bold;
+	color: #1F1F1F;
+	margin-left: 15px;
+	line-height: 50px;
+}
+.button {
+	height: 30px;
+	width: 100px;
+	margin-top: 20px;
+	margin-left: 100px;
+	background-color: #F60;
+	font-size: 18px;
+	color: #FFF;
+	border: 0px none #FFF;
+	text-align: center;
+}.input {
+	height: 30px;
+	width: 250px;
+	margin-bottom: 12px;
+	margin-left: 10px;
+	margin-top: 10px;
+	text-align: left;
+
+}
+.no-js body .container #conn .rc_box1 .rc_box3 #form2 p label #textarea {
+	width: 280px;
+	margin-top: 30px;
+}
+.no-js body .container #conn .rc_box1 .rc_box3 .so {
+	margin-top: 30px;
+}
+
+
+.table {
+	width: 700px;
+	margin-top: 10px;
+}
+.textfield2 {
+	width: 300px;
+}

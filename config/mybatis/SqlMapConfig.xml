@@ -1,0 +1,15 @@
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+<!-- 定义别名 -->
+<typeAliases>
+ <!-- 批量别名定义
+ 指定包路径，自动扫描包下的pojo，定义别名，别名默认为类名（首字母大写或小写） -->
+  <package name="xu.sharry.ssm.po"/>
+ 
+</typeAliases>
+
+	
+	
+</configuration>

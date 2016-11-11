@@ -1,0 +1,177 @@
+@charset "utf-8";
+.company {
+	height: 1100px;
+	width: 1360px;
+	border: thin none #999;
+	margin-top: -50px;
+	z-index: 0;
+	background: rgba(255, 255, 255, 0.8)!important;
+	filter: Alpha(opacity=95); /* 透明度*/
+	background: #fff;
+	position: absolute;
+}
+.container #conn #company ul li{
+	list-style: none;
+	line-height: 20px;
+	float: left;
+	}
+.container #conn #company ul li:last-child {
+	float: right;
+	margin-right: 30px;	
+	font-size: 14px;
+	color: #2D2D2D;
+}
+
+.company_list {
+	height: 500px;
+	width: 1300px;
+	border-top-width: thin;
+	border-right-width: thin;
+	border-left-width: thin;
+	border-right-style: none;
+	border-left-style: none;
+	border-top-color: #CCC;
+	border-right-color: #CCC;
+	border-bottom-color: #000;
+	border-left-color: #CCC;
+	margin-top: 0px;
+	margin-right: auto;
+	margin-bottom: 0px;
+	margin-left: auto;
+	padding-top: 50px;
+}
+.list {
+	border-bottom-width: thin;
+	border-bottom-style: solid;
+	border-bottom-color: #CCC;
+	padding-bottom: 25px;
+	padding-top: 25px;
+	margin-left: 25px;
+}
+.list_left {
+	float: left;
+	border: thin solid #BFBFBF;
+	margin-right: 15px;
+	height: 160px;
+	width: 200px;
+}
+.right {
+	font-family: "宋体";
+	font-size: 13px;
+	color: #5F5F5F;
+}
+
+
+
+
+
+
+.container #conn #company ul li span {
+	font-size: 15px;
+	color: #333;
+	font-family: "宋体";
+	font-weight: bold;
+}
+.container #conn #company #company_list .list #right p .f14 a {
+	font-size: 16px;
+	font-weight: bold;
+	color: #282828;
+	text-decoration: none;
+}
+.container #conn #company #company_list .list #right p .f14 a:link{
+	font-size: 15px;
+	font-weight: bold;
+	color: #282828;
+	text-decoration: none;
+}
+
+.container #conn #company #company_list .list #right p .f14 a:visited {
+	font-size: 15px;
+	font-weight: bold;
+	color: #282828;
+	text-decoration: none;
+}
+
+.container #conn #company #company_list .list #right p .f14 a:hover {
+	font-size: 15px;
+	font-weight: bold;
+	color: #282828;
+	text-decoration: none;
+}
+
+.container #conn #company #company_list .list #right p .f14 a:active {
+	
+}
+
+.container #conn #company ul {
+	padding-bottom: 10px;
+}
+
+.container #conn #company ul li a {
+	text-decoration: none;
+	display: inline-block;
+	height: 25px;
+	width: 60px;
+	text-align: center;
+	line-height: 25px;
+}
+
+.container #conn #company ul li a:link {
+	text-decoration: none;
+	font-size: 14px;
+	color: #2D2D2D;
+	
+}
+.container #conn #company ul li a:visited {
+	text-decoration: none;
+
+}
+.container #conn #company ul li a:hover {
+	text-decoration: none;
+	background-color: #F60;
+	color: #FFF;
+	
+}
+.container #conn #company ul li a:active {
+	text-decoration: none;
+
+}
+
+.bottom2 {
+	height: 100px;
+	width: 100%;
+	background-color: #34495e;
+	text-align: center;
+	font-size: 12px;
+	color: #A6A6FF;
+	padding-top: 15px;
+	letter-spacing: 2px;
+	line-height: 25px;
+	border-top-width: medium;
+	border-top-style: solid;
+	border-top-color: #ACACAC;
+	margin-bottom: 0px;
+	clear: both;
+	position: absolute;
+	bottom: 0px;
+	top: 1550px;
+}
+
+.a2 {
+	margin-right: 20px;
+	margin-left: 20px;
+}
+.a2:link{
+	color: #A6A6FF;
+	font-size: 12px;
+	text-decoration: none;
+	}
+	.a2:visited{
+	color: #A6A6FF;
+	font-size: 12px;
+	text-decoration: none;
+}
+.a2:hover{
+	color: #ffffff;
+	}
+	

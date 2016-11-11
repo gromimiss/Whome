@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="xu.sharry.ssm.mapper.ServiceAreaMapper" >
+ <resultMap id="BaseResultMap" type="xu.sharry.ssm.po.ServiceArea" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="time" property="time" jdbcType="VARCHAR" />
+    <result column="type" property="type" jdbcType="VARCHAR" />
+    <result column="minprice" property="minprice" jdbcType="VARCHAR" />
+    <result column="maxprice" property="maxprice" jdbcType="VARCHAR" />
+    <result column="refprice" property="refprice" jdbcType="VARCHAR" />
+    <result column="available" property="available" jdbcType="CHAR" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="xu.sharry.ssm.po.ServiceArea" extends="BaseResultMap" >
+    <result column="introduce" property="introduce" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, name, time, type, minprice, maxprice, refprice, available
+  </sql>
+  <sql id="Blob_Column_List" >
+    introduce
+  </sql>
+  <select id="selectByExampleWithBLOBs" resultMap="ResultMapWithBLOBs" parameterType="xu.sharry.ssm.po.ServiceAreaExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from service_area
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="xu.sharry.ssm.po.ServiceAreaExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from service_area
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from service_area
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from service_area
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="xu.sharry.ssm.po.ServiceAreaExample" >
+    delete from service_area
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="xu.sharry.ssm.po.ServiceArea" >
+    insert into service_area (id, name, time, 
+      type, minprice, maxprice, 
+      refprice, available, introduce
+      )
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{time,jdbcType=VARCHAR}, 
+      #{type,jdbcType=VARCHAR}, #{minprice,jdbcType=VARCHAR}, #{maxprice,jdbcType=VARCHAR}, 
+      #{refprice,jdbcType=VARCHAR}, #{available,jdbcType=CHAR}, #{introduce,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="xu.sharry.ssm.po.ServiceArea" >
+    insert into service_area
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="time != null" >
+        time,
+      </if>
+      <if test="type != null" >
+        type,
+      </if>
+      <if test="minprice != null" >
+        minprice,
+      </if>
+      <if test="maxprice != null" >
+        maxprice,
+      </if>
+      <if test="refprice != null" >
+        refprice,
+      </if>
+      <if test="available != null" >
+        available,
+      </if>
+      <if test="introduce != null" >
+        introduce,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="time != null" >
+        #{time,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="minprice != null" >
+        #{minprice,jdbcType=VARCHAR},
+      </if>
+      <if test="maxprice != null" >
+        #{maxprice,jdbcType=VARCHAR},
+      </if>
+      <if test="refprice != null" >
+        #{refprice,jdbcType=VARCHAR},
+      </if>
+      <if test="available != null" >
+        #{available,jdbcType=CHAR},
+      </if>
+      <if test="introduce != null" >
+        #{introduce,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="xu.sharry.ssm.po.ServiceAreaExample" resultType="java.lang.Integer" >
+    select count(*) from service_area
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update service_area
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.name != null" >
+        name = #{record.name,jdbcType=VARCHAR},
+      </if>
+      <if test="record.time != null" >
+        time = #{record.time,jdbcType=VARCHAR},
+      </if>
+      <if test="record.type != null" >
+        type = #{record.type,jdbcType=VARCHAR},
+      </if>
+      <if test="record.minprice != null" >
+        minprice = #{record.minprice,jdbcType=VARCHAR},
+      </if>
+      <if test="record.maxprice != null" >
+        maxprice = #{record.maxprice,jdbcType=VARCHAR},
+      </if>
+      <if test="record.refprice != null" >
+        refprice = #{record.refprice,jdbcType=VARCHAR},
+      </if>
+      <if test="record.available != null" >
+        available = #{record.available,jdbcType=CHAR},
+      </if>
+      <if test="record.introduce != null" >
+        introduce = #{record.introduce,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map" >
+    update service_area
+    set id = #{record.id,jdbcType=INTEGER},
+      name = #{record.name,jdbcType=VARCHAR},
+      time = #{record.time,jdbcType=VARCHAR},
+      type = #{record.type,jdbcType=VARCHAR},
+      minprice = #{record.minprice,jdbcType=VARCHAR},
+      maxprice = #{record.maxprice,jdbcType=VARCHAR},
+      refprice = #{record.refprice,jdbcType=VARCHAR},
+      available = #{record.available,jdbcType=CHAR},
+      introduce = #{record.introduce,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update service_area
+    set id = #{record.id,jdbcType=INTEGER},
+      name = #{record.name,jdbcType=VARCHAR},
+      time = #{record.time,jdbcType=VARCHAR},
+      type = #{record.type,jdbcType=VARCHAR},
+      minprice = #{record.minprice,jdbcType=VARCHAR},
+      maxprice = #{record.maxprice,jdbcType=VARCHAR},
+      refprice = #{record.refprice,jdbcType=VARCHAR},
+      available = #{record.available,jdbcType=CHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="xu.sharry.ssm.po.ServiceArea" >
+    update service_area
+    <set >
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="time != null" >
+        time = #{time,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        type = #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="minprice != null" >
+        minprice = #{minprice,jdbcType=VARCHAR},
+      </if>
+      <if test="maxprice != null" >
+        maxprice = #{maxprice,jdbcType=VARCHAR},
+      </if>
+      <if test="refprice != null" >
+        refprice = #{refprice,jdbcType=VARCHAR},
+      </if>
+      <if test="available != null" >
+        available = #{available,jdbcType=CHAR},
+      </if>
+      <if test="introduce != null" >
+        introduce = #{introduce,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="xu.sharry.ssm.po.ServiceArea" >
+    update service_area
+    set name = #{name,jdbcType=VARCHAR},
+      time = #{time,jdbcType=VARCHAR},
+      type = #{type,jdbcType=VARCHAR},
+      minprice = #{minprice,jdbcType=VARCHAR},
+      maxprice = #{maxprice,jdbcType=VARCHAR},
+      refprice = #{refprice,jdbcType=VARCHAR},
+      available = #{available,jdbcType=CHAR},
+      introduce = #{introduce,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="xu.sharry.ssm.po.ServiceArea" >
+    update service_area
+    set name = #{name,jdbcType=VARCHAR},
+      time = #{time,jdbcType=VARCHAR},
+      type = #{type,jdbcType=VARCHAR},
+      minprice = #{minprice,jdbcType=VARCHAR},
+      maxprice = #{maxprice,jdbcType=VARCHAR},
+      refprice = #{refprice,jdbcType=VARCHAR},
+      available = #{available,jdbcType=CHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

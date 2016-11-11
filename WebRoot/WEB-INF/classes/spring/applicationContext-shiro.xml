@@ -1,0 +1,106 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans-3.2.xsd 
+		http://www.springframework.org/schema/mvc 
+		http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd 
+		http://www.springframework.org/schema/context 
+		http://www.springframework.org/schema/context/spring-context-3.2.xsd 
+		http://www.springframework.org/schema/aop 
+		http://www.springframework.org/schema/aop/spring-aop-3.2.xsd 
+		http://www.springframework.org/schema/tx 
+		http://www.springframework.org/schema/tx/spring-tx-3.2.xsd "
+		  >
+		  <!-- web.xml中shiro的filter对应的bean -->
+<!-- Shiro 的Web过滤器 -->
+	<bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+		<property name="securityManager" ref="securityManager" />
+		<!-- loginUrl认证提交地址，如果没有认证将会请求此地址进行认证，
+		         请求此地址将由formAuthenticationFilter进行表单认证 -->
+		<property name="loginUrl" value="/login.action" />
+		<!-- 认证成功统一跳转到first.action，建议不配置，shiro认证成功自动到上一个请求路径 -->
+		<!--  <property name="successUrl" value="/first.action"/>-->
+		<!-- 通过unauthorizedUrl指定没有权限操作时跳转页面-->
+		<property name="unauthorizedUrl" value="/login.jsp" />
+
+		
+		<!-- 过虑器链定义，从上向下顺序执行，一般将/**放在最下边 -->
+		<property name="filterChainDefinitions">
+			<value>
+				<!-- 对静态资源设置匿名访问 -->
+				/img/** = anon
+				/js/** = anon
+				/CSS/** = anon
+				/register.action = anon
+				/registerSubmit.action=anon
+				/registerstepone.action=anon
+				/registersteptwo.action=anon
+				/registerstepthree.action=anon
+				
+				/logout.action = logout
+				<!-- 验证码，可匿名访问 -->
+				/validatecode.jsp = anon
+				/jsp/success.jsp=anon
+				/jsp/register.jsp=anon
+				/jsp/register-2.jsp=anon
+				/jsp/register-3.jsp=anon
+				/jsp/register-4.jsp=anon
+				
+				/** = authc
+				<!-- /** = anon所有url都可以匿名访问 -->
+				
+			</value>
+		</property>
+	</bean>
+	
+	<!-- securityManager安全管理器 -->
+<bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+
+		<property name="realms">
+		<list>
+		<ref bean="customRealm" />			
+		<ref bean="customRealm2" />	
+		</list>
+		</property>
+		<property name="rememberMeManager" ref="rememberMeManager"/>
+
+	</bean>
+	
+	<!-- realm -->
+<bean id="customRealm" class="xu.sharry.ssm.realm.CustomRealm">
+	<!-- 将凭证匹配器设置到realm中，realm按照凭证匹配器的要求进行散列 -->
+	<property name="credentialsMatcher" ref="credentialsMatcher"/>
+</bean>
+
+<bean id="customRealm2" class="xu.sharry.ssm.realm.CustomRealm2">
+	<!-- 将凭证匹配器设置到realm中，realm按照凭证匹配器的要求进行散列 -->
+	<property name="credentialsMatcher" ref="credentialsMatcher"/>
+</bean>
+
+<!-- 凭证匹配器 -->
+<bean id="credentialsMatcher"
+	class="org.apache.shiro.authc.credential.HashedCredentialsMatcher">
+	<property name="hashAlgorithmName" value="md5" />
+	<property name="hashIterations" value="1" />
+</bean>
+
+    
+
+<!-- rememberMeManager管理器，写cookie，取出cookie生成用户信息 -->
+	<bean id="rememberMeManager" class="org.apache.shiro.web.mgt.CookieRememberMeManager">
+		<property name="cookie" ref="rememberMeCookie" />
+	</bean>
+	
+	<!-- 记住我cookie -->
+	<bean id="rememberMeCookie" class="org.apache.shiro.web.servlet.SimpleCookie">
+		<!-- rememberMe是cookie的名字 -->
+		<constructor-arg value="rememberMe" />
+		<!-- 记住我cookie生效时间30天 -->
+		<property name="maxAge" value="2" />
+	</bean>
+    
+
+	
+</beans>

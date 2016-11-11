@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE mapper  
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+  <!-- 命名空间，对sql语句进行隔离，方便管理 -->
+ <mapper namespace="xu.sharry.ssm.mapper.ProviderMapperCustom">
+    
+  <resultMap id="ProviderResultMap" type="xu.sharry.ssm.po.Provider" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="usercode" property="usercode" jdbcType="VARCHAR" />
+    <result column="password" property="password" jdbcType="VARCHAR" />
+    <result column="salt" property="salt" jdbcType="VARCHAR" />
+    <result column="pic" property="pic" jdbcType="VARCHAR" />
+    <result column="principal" property="principal" jdbcType="VARCHAR" />
+    <result column="email" property="email" jdbcType="VARCHAR" />
+    <result column="company_type" property="companyType" jdbcType="VARCHAR" />
+    <result column="company_name" property="companyName" jdbcType="VARCHAR" />
+    <result column="company_address" property="companyAddress" jdbcType="VARCHAR" />
+    <result column="company_phone" property="companyPhone" jdbcType="VARCHAR" />
+    <result column="order_number" property="orderNumber" jdbcType="VARCHAR" />
+    <result column="star_number" property="starNumber" jdbcType="VARCHAR" />
+  </resultMap>
+  
+    <!-- 添加供应商-->
+	<insert id="insertProvider" parameterType="provider">
+	<selectKey keyProperty="id" order="AFTER" resultType="int">
+	select last_insert_id()
+	</selectKey>
+	insert into provider(id, usercode, password, 
+      salt, pic, principal, 
+      email, company_type, company_name, 
+      company_address, company_phone, order_number, 
+      star_number)
+    values (#{id,jdbcType=INTEGER}, #{usercode,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
+      #{salt,jdbcType=VARCHAR}, #{pic,jdbcType=VARCHAR}, #{principal,jdbcType=VARCHAR}, 
+      #{email,jdbcType=VARCHAR}, #{companyType,jdbcType=VARCHAR}, #{companyName,jdbcType=VARCHAR}, 
+      #{companyAddress,jdbcType=VARCHAR}, #{companyPhone,jdbcType=VARCHAR}, #{orderNumber,jdbcType=VARCHAR}, 
+      #{starNumber,jdbcType=VARCHAR})
+	</insert>
+	
+<!-- 查询评分前十的供应商 -->
+<select id="findProviderBystarnumber"  resultMap="ProviderResultMap">
+select * from provider ORDER BY star_number desc limit 10;
+  </select>
+  <!-- 查询供应商拥有多少工作者 -->
+  <select id="workercount" parameterType="int" resultType="int">
+  select count(*) from worker where provider_id =#{provider_id};
+  </select>
+  
+  <select id="findServicename" parameterType="int" resultType="int" ></select>
+  
+  </mapper>

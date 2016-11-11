@@ -1,0 +1,137 @@
+@charset "utf-8";
+body {
+	background-image: url(../img/shinei.jpg);
+	background-size: 1366px 768px; 
+	
+	height: 550px;
+	
+	background-attachment: fixed;
+	margin: 0px;
+	padding: 0px;
+}
+#header {
+	background-color: #34495e;
+	height: 25px;
+	margin: 0px;
+	padding: 0px;
+}
+
+#container {
+	box-shadow: 0 0 2px rgba(0, 0, 0, 0.2),  
+                0 1px 1px rgba(0, 0, 0, .2),
+                0 3px 0 #fff,
+                0 4px 0 rgba(0, 0, 0, .2),
+                0 6px 0 #fff,  
+                0 7px 0 rgba(0, 0, 0, .2);
+	position: absolute;
+	background-color: #fff;
+border: 1px solid #fff;
+-moz-border-radius: 10px;
+-webkit-border-radius: 10px;
+border-radius:10px;
+color:#fff;
+	z-index: 0;
+	height: 300px;
+	width: 350px;
+	margin-top: 100px;
+	margin-bottom: 50px;
+	margin-left: 450px;
+	padding-top: 40px;
+	padding-bottom: 30px;
+	background: rgba(255, 255, 255, 0.6)!important;
+	filter: Alpha(opacity=95); /* 透明度*/
+	background: #fff; /*　使用IE专属滤镜实现IE背景透明*/
+}
+#container:before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    border: 1px dashed #ccc;
+    top: 5px;
+    bottom: 5px;
+    left: 5px;
+    right: 5px;
+    box-shadow: 0 0 0 1px #fff;
+}
+
+.mian {
+	position: relative;
+}
+
+
+#bottom {
+	background-color: #34495e;
+	height: 70px;
+	margin-top: 145px;
+}
+.input {
+	height: 40px;
+	width: 250px;
+	display:block;
+	margin:25px auto 10px;
+}
+
+.button {
+	height: 40px;
+	width: 250px;
+	margin-top:-30px;
+	margin-left: 50px;
+	background-color: #F60;
+	font-size: 18px;
+	color: #FFF;
+	letter-spacing:4px;
+	border: 0px none #FFF;
+	border-radius:4px;
+}
+label {
+	float: left;
+	margin-left:2px;
+}
+.remeberme {
+
+	float:left;
+    height:40px; float:left; margin:0; padding:0;margin-top:-1px\9;
+
+}
+.reg a{
+	float:right;
+    color: #666;
+	font-family: "宋体";
+}
+.block{
+	width:250px;
+	height:50px;
+	margin:15px auto 0;
+	line-height:40px;
+	font-size:12px;
+	color: #666;
+	font-family: "宋体";}
+
+h1 {
+    text-shadow: 0 1px 0 rgba(255, 255, 255, .7), 0px 2px 0 rgba(0, 0, 0, .5);
+    text-transform: uppercase;
+    text-align: center;
+    color: #666;
+    margin: 0 0 30px 0;
+    letter-spacing: 4px;
+    font: normal 26px/1 Verdana, Helvetica;
+    position: relative;
+}
+h1:after, 
+h1:before {
+    background-color: #777;
+    content: "";
+    height: 1px;
+    position: absolute;
+    top: 15px;
+    width: 120px;   
+}
+
+h1:after {      
+    right: 0;
+}
+
+h1:before {
+    background-image: linear-gradient(right, #777, #fff);
+    left: 0;
+}

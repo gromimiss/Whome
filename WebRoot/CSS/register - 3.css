@@ -1,0 +1,193 @@
+@charset "utf-8";
+body {
+	background-image: url(../img/shinei.jpg);
+	background-size: 1366px 768px; 
+	
+	height: 550px;
+	
+	background-attachment: fixed;
+	margin: 0px;
+	padding: 0px;
+}
+.registercloose {
+	background: rgba(255, 255, 255, 0.6)!important;
+	filter: Alpha(opacity=95); /* 透明度*/
+	background: #fff;
+	height: 60px;
+	width: 80px;
+	display: inline;
+	margin-left: 0px;
+	border-top-color: #CCC;
+	border-right-color: #CCC;
+	border-bottom-color: #CCC;
+	border-left-color: #CCC;
+	-moz-border-radius: 10px 10px 0px 0px;
+	-webkit-border-radius: 10px 10px 0px 0px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 13px;
+	color: #74818e;
+	font-weight: bold;
+}
+.registercloose2 {
+	background: #34495e;
+	height: 60px;
+	width: 90px;
+	display: inline;
+	/*　使用IE专属滤镜实现IE背景透*/
+	margin-left: 0px;
+	border-top-color: #CCC;
+	border-right-color: #CCC;
+	border-bottom-color: #CCC;
+	border-left-color: #CCC;
+	-moz-border-radius: 10px 10px 0px 0px;
+	-webkit-border-radius: 10px 10px 0px 0px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	font-size: 14px;
+	font-weight: bolder;
+	color: #FFF;
+}
+
+.table {
+	margin-left: 40px;
+	color: #666;
+	margin-top: 50px;
+	padding: 0px;
+	float: left;
+	margin-right: 40px;
+
+}
+
+
+
+.choose {
+	height: 60px;
+	width: 748px;
+	position: relative;
+	border-radius: 8px 8px 0px 0px;
+	-moz-border-radius: 8px 8px 0px 0px;
+	;
+	-webkit-border-radius: 8px 8px 0px 0px;
+	;
+	border-bottom-width: 10px;
+	border-bottom-style: solid;
+	z-index: 2;
+	border-bottom-color: #34495e;
+}
+
+#content {
+	height: 350px;
+	width: 600px;
+	position: absolute;
+	margin-top: 70px;
+	margin-bottom: 50px;
+	margin-left: 335px;
+}
+
+
+
+.mian {
+	position: relative;
+	border-right-width: thin;
+	border-right-style: solid;
+	border-bottom-style: none;
+	border-right-color: #CCC;
+	width: 350px;
+	float: left;
+	height: 300px;
+	margin-right: 50px;
+}
+
+.button {
+	height: 30px;
+	width: 100px;
+	margin-top: 40px;
+	margin-left: 100px;
+	background-color: #F60;
+	font-size: 18px;
+	color: #FFF;
+	border: 0px none #FFF;
+	text-align: center;
+}
+.img {
+	margin-left: 5px;
+}
+.container2 {
+	box-shadow: 0 0 2px rgba(0, 0, 0, 0.2),  
+                0 1px 1px rgba(0, 0, 0, .2),
+                0 3px 0 #fff,
+                0 4px 0 rgba(0, 0, 0, .2),
+                0 6px 0 #fff,  
+                0 7px 0 rgba(0, 0, 0, .2);
+	position: absolute;
+	background-color: #fff;
+	border: 1px solid #fff;
+	-moz-border-radius: 0px 10px 10px 10px;
+	-webkit-border-radius: 0px 10px 10px 10px;
+	color: #fff;
+	z-index: 0;
+	height: 350px;
+	width: 750px;
+	padding-top: 40px;
+	padding-bottom: 30px;
+	background: rgba(255, 255, 255, 0.7)!important;
+	filter: Alpha(opacity=95); /* 透明度*/
+	background: #fff;
+}
+.container2:before{
+	content: '';
+    position: absolute;
+    z-index: -1;
+    border: 1px dashed #ccc;
+    top: 5px;
+    bottom: 5px;
+    left: 5px;
+    right: 5px;
+    box-shadow: 0 0 0 1px #fff;
+}
+#content #container2 #mian2 .table span{
+		width: 80px;
+	float: left;
+	text-align: right;
+	padding-top: 3px;
+}
+#content #container2 #saying2 p {
+	font-size: 10px;
+	margin-right: 20px;
+	color: #2C3E50;
+	line-height: 20px;
+	margin-top: 60px;
+	margin-bottom: 0px;
+	font-family: "宋体";
+	letter-spacing: 2px;
+}
+
+#content #container2 #saying2 span {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 36px;
+	line-height: 5px;
+	font-weight: bolder;
+}
+
+#content #container2 #saying2 {
+	display: inline;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 24px;
+	font-style: normal;
+	letter-spacing: 4px;
+	line-height: 45px;
+	color: #74818e;
+	font-weight: bold;
+}
+#container2 #mian2 .table p {
+	font-size: 14px;
+	line-height: 30px;
+	letter-spacing: 2px;
+	padding-bottom: 20px;
+}

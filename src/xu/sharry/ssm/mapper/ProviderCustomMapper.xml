@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="xu.sharry.ssm.mapper.ProviderCustomMapper" >
+ <resultMap id="BaseResultMap" type="xu.sharry.ssm.po.Provider" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="usercode" property="usercode" jdbcType="VARCHAR" />
+    <result column="password" property="password" jdbcType="VARCHAR" />
+    <result column="salt" property="salt" jdbcType="VARCHAR" />
+    <result column="pic" property="pic" jdbcType="VARCHAR" />
+    <result column="principal" property="principal" jdbcType="VARCHAR" />
+    <result column="email" property="email" jdbcType="VARCHAR" />
+    <result column="company_type" property="companyType" jdbcType="VARCHAR" />
+    <result column="company_name" property="companyName" jdbcType="VARCHAR" />
+    <result column="company_address" property="companyAddress" jdbcType="VARCHAR" />
+    <result column="company_phone" property="companyPhone" jdbcType="VARCHAR" />
+    <result column="order_number" property="orderNumber" jdbcType="VARCHAR" />
+    <result column="star_number" property="starNumber" jdbcType="VARCHAR" />
+    <result column="runaddress" property="runaddress" jdbcType="VARCHAR" />
+    <result column="companysize" property="companysize" jdbcType="VARCHAR" />
+  </resultMap>
+
+
+
+
+<select id="findProviderList" parameterType="provider" resultMap="BaseResultMap">
+   select * from provider where company_name like '%${provider.companyName}%'
+</select>
+
+</mapper>
